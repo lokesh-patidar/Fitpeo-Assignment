@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+  background-color: #e8f2fc;
+}
+
+.MainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.tilted-div:hover {
+  transform: rotate(3deg);
+  /* Adjust the angle as needed */
+}
+
+.truncated-text {
+  max-width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.truncated-text div {
+  display: inline-block;
+  max-width: 100%;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
