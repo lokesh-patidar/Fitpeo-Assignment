@@ -1,7 +1,9 @@
-import { RiMenuUnfoldFill } from "react-icons/ri";
+import { MdOutlineLiveHelp } from "react-icons/md";
 import { GoHome } from "react-icons/go";
 import { HiFastForward } from "react-icons/hi";
-
+import { CiPercent } from "react-icons/ci";
+import { PiCodesandboxLogoLight, PiUserRectangle } from "react-icons/pi";
+import { GiReceiveMoney } from "react-icons/gi";
 
 export const SidebarData = [
     {
@@ -13,24 +15,37 @@ export const SidebarData = [
     },
     {
         id: 2,
-        icon: <RiMenuUnfoldFill />,
-        title: 'Users Details',
+        icon: <PiCodesandboxLogoLight />,
+        title: 'Products',
         space: <HiFastForward color="transparent" />,
-        path: `/user-details`,
+        path: `/products`,
     },
     {
         id: 3,
-        icon: <RiMenuUnfoldFill />,
-        title: 'Customer Details',
+        icon: <PiUserRectangle />,
+        title: 'Customers',
         space: <HiFastForward color="transparent" />,
-        path: `/customer-details`,
+        path: `/customers`,
     },
     {
         id: 4,
-        icon: <RiMenuUnfoldFill />,
-        title: 'All Messages',
+        icon: <GiReceiveMoney />,
+        title: 'Income',
         space: <HiFastForward color="transparent" />,
-        path: `/all-messages`,
+        path: `/income`,
     },
-
+    {
+        id: 5,
+        icon: <CiPercent fontWeight={'bold'} />,
+        title: 'Promote',
+        space: <HiFastForward color="transparent" />,
+        path: `/promote`,
+    },
+    {
+        id: 6,
+        icon: <MdOutlineLiveHelp />,
+        title: 'Help',
+        space: <HiFastForward color="transparent" />,
+        path: `/help`,
+    },
 ];
