@@ -3,7 +3,7 @@ import React from "react";
 import { GrMenu } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import { SidebarData } from "../Data/SidebarData";
-import { homeRoute } from "../AllRoutes/AllRoute";
+import { BiChevronRight } from "react-icons/bi";
 
 const SidebarDrawer = () => {
 
@@ -14,7 +14,6 @@ const SidebarDrawer = () => {
     const pathname = currentUrl.pathname;
     var urlName = pathname.substring(1);
     const text = urlName.split("/");
-    const userRole = localStorage.getItem('cardUserRole');
 
     const handleRemoveEventIdTInLocalStorage = () => {
         onClose();
@@ -47,34 +46,29 @@ const SidebarDrawer = () => {
                             <Box>
                                 {
                                     SidebarData?.length > 0 &&
-                                    SidebarData?.filter((el) => {
-                                        if (userRole === 'Admin') {
-                                            return el.title !== 'Users Details'
-                                        }
-                                        else {
-                                            return el;
-                                        }
-                                    }).map((el) => {
+                                    SidebarData?.map((el) => {
+                                        console.log({ text: text[0], path: el.path })
                                         return (
                                             <Accordion allowToggle w='100%' key={el.id}>
                                                 <AccordionItem border='none'>
                                                     <Link to={`${el.path}`}>
                                                         <AccordionButton
                                                             display='flex'
-                                                            pl={1}
+                                                            pl={2}
                                                             width={{ base: '95%' }}
                                                             alignItems='center'
                                                             justifyContent='space-between'
                                                             borderRadius='5px'
                                                             textDecor='none'
                                                             fontSize={{ base: '90%', md: '95%', lg: '90%', xl: '125%' }}
-                                                            background={`${homeRoute}/${text[1]}` === el.path ? '#c0effc' : ''}
-                                                            color={`${homeRoute}/${text[1]}` === el.path ? '#0499c2' : 'rgba(70, 66, 85, 1)'}
-                                                            _hover={{ bg: '#e9f2f5' }}
+                                                            background={`/${text[0]}` === el.path ? '#4442c2' : ''}
+                                                            color={`/${text[0]}` === el.path ? 'white' : '#a1a2b3'}
+                                                            _hover={{ bg: '#1c478c' }}
                                                             onClick={handleRemoveEventIdTInLocalStorage}
                                                         >
-                                                            <Box display='flex' justifyContent='left' alignItems='center' textAlign='left' width='100%'>
-                                                                {el.icon}{el.space}{el.title}
+                                                            <Box display='flex' justifyContent='space-between' alignItems='center' textAlign='left' width='100%'>
+                                                                <Box display='flex' alignItems='center'>{el.icon}{el.space}{el.title}</Box>
+                                                                <BiChevronRight />
                                                             </Box>
                                                         </AccordionButton>
                                                     </Link>

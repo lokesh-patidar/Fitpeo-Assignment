@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { useEffect } from "react";
+import Navbar from "../Components/Navbar/Navbar";
 
 const Dashboard = () => {
 
@@ -11,14 +12,9 @@ const Dashboard = () => {
         <Box
             width={{ base: '100%', md: '75%', lg: '80%' }}
             display='flex'
+            p={3}
         >
-            <Box
-                width='100%'
-                minH='100vh'
-                bg='white'
-            >
-                Dashboard
-            </Box>
+            <Navbar />
         </Box>
     );
 };

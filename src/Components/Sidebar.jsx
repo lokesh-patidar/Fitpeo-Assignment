@@ -2,7 +2,7 @@ import { Accordion, AccordionButton, AccordionItem, Box, Text } from "@chakra-ui
 import { Link } from "react-router-dom";
 import { SidebarData } from "../Data/SidebarData";
 import { TbSettings2 } from "react-icons/tb";
-
+import { BiChevronRight } from "react-icons/bi";
 
 const SideBar = () => {
 
@@ -24,9 +24,9 @@ const SideBar = () => {
             bg='#040275'
         >
             <Box pt={4} pb={4} display='flex' justifyContent='center' alignItems='center'>
-                <Box display='flex' justifyContent='center' alignItems='center' color='white'>
+                <Box display='flex' alignItems='center' color='white' pl={1}>
                     <TbSettings2 size='10%' />
-                    <Text ml={2} fontSize={{ base: '220%' }}>Dashboard</Text>
+                    <Text ml={2} fontSize={{ base: '150%' }}>Dashboard</Text>
                 </Box>
             </Box>
             <Box
@@ -52,10 +52,11 @@ const SideBar = () => {
                                             fontSize={{ base: '90%', md: '95%', lg: '90%', xl: '125%' }}
                                             background={`/${text[0]}` === el.path ? '#4442c2' : ''}
                                             color={`/${text[0]}` === el.path ? 'white' : '#a1a2b3'}
-                                            _hover={{ bg: '#e9f2f5' }}
+                                            _hover={{ bg: '#1c478c' }}
                                         >
-                                            <Box display='flex' justifyContent='left' alignItems='center' textAlign='left' width='100%'>
-                                                {el.icon}{el.space}{el.title}
+                                            <Box display='flex' justifyContent='space-between' alignItems='center' textAlign='left' width='100%'>
+                                                <Box display='flex' alignItems='center'>{el.icon}{el.space}{el.title}</Box>
+                                                <BiChevronRight />
                                             </Box>
                                         </AccordionButton>
                                     </Link>
