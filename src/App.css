@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #fafafc;
+  background-color: #f5f6ff;
 }
 
 .MainContainer {
@@ -27,4 +27,13 @@
   white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.circle{
+  display: flex;
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
 }

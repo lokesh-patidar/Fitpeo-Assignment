@@ -1,8 +1,8 @@
-import { Accordion, AccordionButton, AccordionItem, Box, Text } from "@chakra-ui/react";
+import { Accordion, AccordionButton, AccordionItem, Avatar, Box, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { SidebarData } from "../Data/SidebarData";
 import { TbSettings2 } from "react-icons/tb";
-import { BiChevronRight } from "react-icons/bi";
+import { BiChevronRight, BiChevronDown } from "react-icons/bi";
 
 const SideBar = () => {
 
@@ -36,7 +36,6 @@ const SideBar = () => {
                 {
                     SidebarData?.length > 0 &&
                     SidebarData?.map((el) => {
-                        console.log({ text: text[0], path: el.path })
                         return (
                             <Accordion allowToggle w='100%' key={el.id}>
                                 <AccordionItem border='none'>
@@ -50,7 +49,7 @@ const SideBar = () => {
                                             borderRadius='5px'
                                             textDecor='none'
                                             fontSize={{ base: '90%', md: '95%', lg: '90%', xl: '125%' }}
-                                            background={`/${text[0]}` === el.path ? '#4442c2' : ''}
+                                            background={`/${text[0]}` === el.path ? '#2a2f70' : ''}
                                             color={`/${text[0]}` === el.path ? 'white' : '#a1a2b3'}
                                             _hover={{ bg: '#1c478c' }}
                                         >
@@ -65,6 +64,18 @@ const SideBar = () => {
                         );
                     })
                 }
+            </Box>
+            <Box h={'full'} display='flex' w='100%' justifyContent='center' alignItems='flex-end'>
+                <Box mr={3} w='100%' display='flex' alignItems='center' justifyContent='space-between' p={1} pl={2} pr={2} borderRadius='5px' bg={'#2a2f70'} _hover={{ cursor: 'pointer' }}>
+                    <Box display='flex' justifyContent='left' alignItems='center'>
+                        <Avatar size='sm' src='https://bit.ly/ryan-florence' />
+                        <Box pl={2} display='flex' flexDir='column'>
+                            <Text display='flex' textAlign='left' color='white' fontSize='90%' >Evano</Text>
+                            <Text display='flex' textAlign='left' color='white' fontSize='70%' >Project Manager</Text>
+                        </Box>
+                    </Box>
+                    <BiChevronDown color='white' />
+                </Box>
             </Box>
         </Box >
     );

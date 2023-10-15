@@ -47,7 +47,6 @@ const SidebarDrawer = () => {
                                 {
                                     SidebarData?.length > 0 &&
                                     SidebarData?.map((el) => {
-                                        console.log({ text: text[0], path: el.path })
                                         return (
                                             <Accordion allowToggle w='100%' key={el.id}>
                                                 <AccordionItem border='none'>
