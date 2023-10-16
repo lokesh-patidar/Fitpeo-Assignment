@@ -22,6 +22,9 @@ const SideBar = () => {
             pl={2}
             pb={3}
             bg='#040275'
+            h={'100vh'}
+            position='sticky'
+            top={'0px'}
         >
             <Box pt={4} pb={4} display='flex' justifyContent='center' alignItems='center'>
                 <Box display='flex' alignItems='center' color='white' pl={1}>
@@ -29,10 +32,7 @@ const SideBar = () => {
                     <Text ml={2} fontSize={{ base: '150%' }}>Dashboard</Text>
                 </Box>
             </Box>
-            <Box
-                position='sticky'
-                top={'75px'}
-            >
+            <Box>
                 {
                     SidebarData?.length > 0 &&
                     SidebarData?.map((el) => {

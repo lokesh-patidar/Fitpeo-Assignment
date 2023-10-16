@@ -11,7 +11,7 @@ export const SidebarData = [
         icon: <GoHome />,
         title: 'Dashboard',
         space: <HiFastForward color="transparent" />,
-        path: `/dashboard`,
+        path: `/`,
     },
     {
         id: 2,

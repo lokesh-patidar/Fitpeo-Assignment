@@ -29,11 +29,71 @@
   text-overflow: ellipsis;
 }
 
-.circle{
+.circle {
   display: flex;
   height: 150px;
   width: 150px;
   border-radius: 100%;
   justify-content: center;
   align-items: center;
+}
+
+@media all and (min-width: 1621px) and (max-width: 1750px) {
+  .circle {
+    height: 130px;
+    width: 130px;
+  }
+}
+
+
+@media all and (min-width: 1585px) and (max-width: 1620px) {
+  .circle {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+
+@media all and (min-width: 1480px) and (max-width: 1584px) {
+  .circle {
+    height: 95px;
+    width: 95px;
+  }
+
+  .fontForLast {
+    font-size: 60%;
+  }
+}
+
+
+@media all and (min-width: 480px) and (max-width: 1580px) {
+  .circle {
+    height: 75px;
+    width: 75px;
+  }
+
+  .topFont {
+    font-size: 80%;
+  }
+
+  .fontForLast {
+    font-size: 50%;
+  }
+}
+
+
+
+@media all and (min-width: 250px) and (max-width: 480px) {
+  .circle {
+    height: 95px;
+    width: 95px;
+  }
+
+  .topFont {
+    font-size: 80%;
+  }
+
+  .fontForLast {
+    font-size: 70%;
+  }
 }

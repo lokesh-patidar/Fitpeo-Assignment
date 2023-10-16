@@ -1,7 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import Navbar from "../Components/Navbar/Navbar";
-import { dashData } from "../Data/DashboardData";
+import { dashData, tableData } from "../Data/DashboardData";
 import { BiDownArrowAlt } from "react-icons/bi";
 import { BsArrowUpShort } from "react-icons/bs";
 import BarChart from "../Components/DashboardComponent/BarChart";
@@ -14,7 +14,7 @@ const Dashboard = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    console.log({ dashData });
+    console.log({ tableData });
 
     return (
         <Box
@@ -39,6 +39,13 @@ const Dashboard = () => {
                     <PolarAreaChart />
                 </Box>
             </Box>
+            <Box>
+                {
+                    tableData?.map((el) => {
+                        return <TableDataCard key={el} {...el} />
+                    })
+                }
+            </Box>
         </Box>
     );
 };
@@ -61,9 +68,9 @@ const DashBordDataCard = ({ img, title, value }) => {
                 <Box className="circle">{img}</Box>
             </Box>
             <Box w='55%' display='flex' flexDir='column' justifyContent='center' alignItems='flex-start' pl={2}>
-                <Text textAlign='left' color='gray'>{title}</Text>
-                <Text textAlign='left' color='black' fontSize={{ base: '100%', sm: '120%', md: '140%', lg: '160%', xl: '200%' }} fontWeight='bold'>{value}</Text>
-                <Text textAlign='left' display='flex' w='100%' alignItems='center'>
+                <Text textAlign='left' color='gray' className="topFont">{title}</Text>
+                <Text textAlign='left' color='black' fontSize={{ base: '150%', sm: '120%', md: '130%', lg: '130%', xl: '150%' }} fontWeight='bold'>{value}</Text>
+                <Text textAlign='left' display='flex' w='100%' alignItems='center' className="fontForLast">
                     {title === 'Earning' ? <span style={{ color: 'green', display: 'flex', alignItems: 'center', fontWeight: '500' }}><BiDownArrowAlt />37.8%</span> : ''}
                     {title === 'Orders' ? <span style={{ color: 'red', display: 'flex', alignItems: 'center', fontWeight: '500' }}><BsArrowUpShort />2%</span> : ''}
                     {title === 'Balance' ? <span style={{ color: 'red', display: 'flex', alignItems: 'center', fontWeight: '500' }}><BsArrowUpShort />2%</span> : ''}
@@ -72,5 +79,11 @@ const DashBordDataCard = ({ img, title, value }) => {
                 </Text>
             </Box>
         </Box>
+    );
+};
+
+const TableDataCard = ({ id, img, title, description, stock, price, totalSales }) => {
+    return (
+        <Box></Box>
     );
 };
