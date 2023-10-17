@@ -44,7 +44,7 @@ const BarChart = () => {
      };
 
      return (
-          <Box>
+          <Box bg={'white'} m={3} borderRadius='5px'>
                <Box display='flex' flexDir='column' justifyContent='left' pl={2}>
                     <Text fontWeight={500} width='fit-content'>Overview</Text>
                     <Text fontSize='90%' width='fit-content'>Monthly</Text>
