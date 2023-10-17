@@ -2,7 +2,6 @@
 import { Box, Text } from '@chakra-ui/react';
 import React, { useEffect, useRef } from 'react';
 import ReactApexChart from 'react-apexcharts';
-import './Donut.css';
 
 const DonutChart = () => {
      const chartContainerRef = useRef(null);
