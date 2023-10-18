@@ -44,7 +44,7 @@ const Dashboard = () => {
                 <Box display='flex' justifyContent='space-between'>
                     <Box fontWeight={'bold'} w='fit-content'>Product Sell</Box>
                     <Box display='flex' flexDir={{ base: 'column', md: 'row' }} maxW={{ base: '100px', sm: '200px', md: '400px' }}>
-                        <InputGroup size={'sm'}>
+                        <InputGroup size={'sm'} mr={{ base: 0, md: 2 }}>
                             <InputLeftElement pointerEvents='none'>
                                 <SearchIcon color='gray.300' />
                             </InputLeftElement>
@@ -82,7 +82,7 @@ const Dashboard = () => {
                                             <Td fontWeight='bold'>{el.price}</Td>
                                             <Td>{el.totalSales}</Td>
                                         </Tr>
-                                    )
+                                    );
                                 })
                             }
 
@@ -123,11 +123,5 @@ const DashBordDataCard = ({ img, title, value }) => {
                 </Text>
             </Box>
         </Box>
-    );
-};
-
-const TableDataCard = ({ id, img, title, description, stock, price, totalSales }) => {
-    return (
-        <Box></Box>
     );
 };
