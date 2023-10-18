@@ -1,6 +1,9 @@
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import { BsFileText } from "react-icons/bs";
 import { SlHandbag } from "react-icons/sl";
+import img1 from "../Images/backgroundlinkedin.jpg";
+import img2 from "../Images/light-lamp-bedside-lamp-illumination-50583 - Copy.jpeg";
+import img3 from "../Images/pexels-photo-219998 - Copy.jpeg";
 
 export const dashData = [
      {
@@ -38,7 +41,7 @@ export const dashData = [
 export const tableData = [
      {
           'id': 1,
-          'img': '',
+          'img': img1,
           'title': 'Abstract 3D',
           'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ...',
           'stock': '32 in stock',
@@ -47,7 +50,7 @@ export const tableData = [
      },
      {
           'id': 2,
-          'img': '',
+          'img': img2,
           'title': 'Sarphens illustration',
           'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ...',
           'stock': '32 in stock',
@@ -55,21 +58,12 @@ export const tableData = [
           'totalSales': '20',
      },
      {
-          'img': '',
+          'img': img3,
           'id': 3,
           'title': 'Abstract 3D',
           'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ...',
           'stock': '32 in stock',
           "price": '$ 45.99',
           'totalSales': '20',
-     },
-     {
-          'img': '',
-          'id': 4,
-          'title': 'Sarphens illustration',
-          'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ...',
-          'stock': '32 in stock',
-          "price": '$ 45.99',
-          'totalSales': '20',
-     },
+     }
 ]

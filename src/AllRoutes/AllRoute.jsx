@@ -16,17 +16,6 @@ const AllRoute = () => {
           </Box>
         </Box>
       } />
-
-
-      {/* <Route path={`/user-details`} element={
-        <Box width='100%'>
-          <Box className='MainContainer'>
-            <SideBar />
-            <UserManagement />
-          </Box>
-        </Box>
-      } /> */}
-
     </Routes>
   );
 };

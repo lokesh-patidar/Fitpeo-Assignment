@@ -38,6 +38,14 @@
   align-items: center;
 }
 
+.h1class {
+  font-size: 200%;
+}
+
+.pclass {
+  font-size: 100%;
+}
+
 @media all and (min-width: 1621px) and (max-width: 1750px) {
   .circle {
     height: 130px;
@@ -79,6 +87,15 @@
   .fontForLast {
     font-size: 50%;
   }
+
+
+  .h1class {
+    font-size: 170%;
+  }
+
+  .pclass {
+    font-size: 90%;
+  }
 }
 
 
@@ -95,5 +112,17 @@
 
   .fontForLast {
     font-size: 70%;
+  }
+
+  .h1clas {
+    font-size: 100%;
+  }
+
+  .h1class {
+    font-size: 150%;
+  }
+
+  .pclass {
+    font-size: 80%;
   }
 }

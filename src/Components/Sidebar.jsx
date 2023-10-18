@@ -1,5 +1,5 @@
 import { Accordion, AccordionButton, AccordionItem, Avatar, Box, Text } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SidebarData } from "../Data/SidebarData";
 import { TbSettings2 } from "react-icons/tb";
 import { BiChevronRight, BiChevronDown } from "react-icons/bi";
@@ -11,6 +11,7 @@ const SideBar = () => {
     var urlName = pathname.substring(1);
     const text = urlName.split("/");
     console.log({ text });
+    const navigate = useNavigate();
 
     return (
         <Box
@@ -39,26 +40,27 @@ const SideBar = () => {
                         return (
                             <Accordion allowToggle w='100%' key={el.id}>
                                 <AccordionItem border='none'>
-                                    <Link to={`${el.path}`}>
-                                        <AccordionButton
-                                            display='flex'
-                                            pl={2}
-                                            width={{ base: '95%' }}
-                                            alignItems='center'
-                                            justifyContent='space-between'
-                                            borderRadius='5px'
-                                            textDecor='none'
-                                            fontSize={{ base: '90%', md: '95%', lg: '90%', xl: '125%' }}
-                                            background={`/${text[0]}` === el.path ? '#2a2f70' : ''}
-                                            color={`/${text[0]}` === el.path ? 'white' : '#a1a2b3'}
-                                            _hover={{ bg: '#1c478c' }}
-                                        >
-                                            <Box display='flex' justifyContent='space-between' alignItems='center' textAlign='left' width='100%'>
-                                                <Box display='flex' alignItems='center'>{el.icon}{el.space}{el.title}</Box>
-                                                <BiChevronRight />
-                                            </Box>
-                                        </AccordionButton>
-                                    </Link>
+                                    {/* <Link to={`${el.path}`}> */}
+                                    <AccordionButton
+                                        display='flex'
+                                        pl={2}
+                                        width={{ base: '95%' }}
+                                        alignItems='center'
+                                        justifyContent='space-between'
+                                        borderRadius='5px'
+                                        textDecor='none'
+                                        fontSize={{ base: '90%', md: '95%', lg: '90%', xl: '125%' }}
+                                        background={`/${text[0]}` === el.path ? '#2a2f70' : ''}
+                                        color={`/${text[0]}` === el.path ? 'white' : '#a1a2b3'}
+                                        _hover={{ bg: '#1c478c' }}
+                                        onClick={() => navigate('/')}
+                                    >
+                                        <Box display='flex' justifyContent='space-between' alignItems='center' textAlign='left' width='100%'>
+                                            <Box display='flex' alignItems='center'>{el.icon}{el.space}{el.title}</Box>
+                                            <BiChevronRight />
+                                        </Box>
+                                    </AccordionButton>
+                                    {/* </Link> */}
                                 </AccordionItem>
                             </Accordion>
                         );

@@ -8,13 +8,22 @@ const DonutChart = () => {
      useEffect(() => {
           if (chartContainerRef?.current) {
                const centerValueElement = document.createElement('div');
-               centerValueElement.textContent = '65%';
+               const p = document.createElement('p');
+               const h = document.createElement('h3');
+               p.innerText = 'Total New Customer';
+               p.style.width = '100px'
+               h.innerText = '65%';
+               // h.style.fontSize = '200%';
+               h.style.fontWeight = 'bold';
+               h.setAttribute('class', 'h1class');
+               p.setAttribute('class', 'pclass');
+
+               centerValueElement.append(h, p);
                centerValueElement.style.background = 'transparent';
                centerValueElement.style.position = 'absolute';
                centerValueElement.style.top = '55%';
                centerValueElement.style.left = '50%';
                centerValueElement.style.transform = 'translate(-50%, -50%)';
-               centerValueElement.style.fontSize = '200%';
                centerValueElement.style.color = 'black';
                centerValueElement.style.zIndex = '1'; // Ensure it's above the chart
                chartContainerRef.current.appendChild(centerValueElement);
@@ -45,7 +54,7 @@ const DonutChart = () => {
 
      return (
           <Box position="relative" p={5} bg={'white'} m={3} borderRadius='5px'>
-               <Text fontWeight={500} fontSize='110%' display='flex'>Customers</Text>
+               <Text fontWeight={'bold'} fontSize='110%' display='flex'>Customers</Text>
                <Text display='flex'>Customers that buy products</Text>
                <div ref={chartContainerRef}>
                     <ReactApexChart options={chartOptions} series={chartOptions.series} type="donut" />

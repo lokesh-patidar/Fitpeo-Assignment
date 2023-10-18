@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Avatar, Box, Input, InputGroup, InputLeftElement, Select, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr } from "@chakra-ui/react";
 import { useEffect } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import { dashData, tableData } from "../Data/DashboardData";
@@ -6,6 +6,7 @@ import { BiDownArrowAlt } from "react-icons/bi";
 import { BsArrowUpShort } from "react-icons/bs";
 import BarChart from "../Components/DashboardComponent/BarChart";
 import PolarAreaChart from "../Components/DashboardComponent/DonutChart";
+import { SearchIcon } from "@chakra-ui/icons";
 
 
 const Dashboard = () => {
@@ -35,16 +36,59 @@ const Dashboard = () => {
                 <Box w={{ base: "full", lg: '60%' }}>
                     <BarChart />
                 </Box>
-                <Box w={{ base: "full", lg: '40%' }}>
+                <Box w={{ base: "100%", sm: '70%', md: '70%', lg: '40%' }} m='auto'>
                     <PolarAreaChart />
                 </Box>
             </Box>
-            <Box>
-                {
-                    tableData?.map((el) => {
-                        return <TableDataCard key={el} {...el} />
-                    })
-                }
+            <Box bg='white' borderRadius='10px' p={2} pt={3}>
+                <Box display='flex' justifyContent='space-between'>
+                    <Box fontWeight={'bold'} w='fit-content'>Product Sell</Box>
+                    <Box display='flex' flexDir={{ base: 'column', md: 'row' }} maxW={{ base: '100px', sm: '200px', md: '400px' }}>
+                        <InputGroup size={'sm'}>
+                            <InputLeftElement pointerEvents='none'>
+                                <SearchIcon color='gray.300' />
+                            </InputLeftElement>
+                            <Input type='text' color='gray.300' fontSize='90%' placeholder='Search' />
+                        </InputGroup>
+                        <Select size={'sm'} placeholder="Last 30 days"></Select>
+                    </Box>
+                </Box>
+
+                <TableContainer mt={3}>
+                    <Table variant='simple'>
+                        <Thead>
+                            <Tr>
+                                <Th w={'90%'} color={'gray.400'}>Product Name</Th>
+                                <Th color={'gray.400'}>Stock</Th>
+                                <Th color={'gray.400'}>Price</Th>
+                                <Th color={'gray.400'}>Total Sales</Th>
+                            </Tr>
+                        </Thead>
+                        <Tbody>
+                            {
+                                tableData?.map((el) => {
+                                    return (
+                                        <Tr key={el.id}>
+                                            <Td>
+                                                <Box display='flex'>
+                                                    <Avatar src={el.img} />
+                                                    <Box ml={2} display='flex' flexDir='column'>
+                                                        <Text fontWeight={'bold'}>{el.title}</Text>
+                                                        <Text>{el.description}</Text>
+                                                    </Box>
+                                                </Box>
+                                            </Td>
+                                            <Td>{el.stock}</Td>
+                                            <Td fontWeight='bold'>{el.price}</Td>
+                                            <Td>{el.totalSales}</Td>
+                                        </Tr>
+                                    )
+                                })
+                            }
+
+                        </Tbody>
+                    </Table>
+                </TableContainer>
             </Box>
         </Box>
     );
