@@ -115,10 +115,10 @@ const DashBordDataCard = ({ img, title, value }) => {
                 <Text textAlign='left' color='gray' className="topFont">{title}</Text>
                 <Text textAlign='left' color='black' fontSize={{ base: '150%', sm: '120%', md: '130%', lg: '130%', xl: '150%' }} fontWeight='bold'>{value}</Text>
                 <Text textAlign='left' display='flex' w='100%' alignItems='center' className="fontForLast">
-                    {title === 'Earning' ? <span style={{ color: 'green', display: 'flex', alignItems: 'center', fontWeight: '500' }}><BiDownArrowAlt />37.8%</span> : ''}
-                    {title === 'Orders' ? <span style={{ color: 'red', display: 'flex', alignItems: 'center', fontWeight: '500' }}><BsArrowUpShort />2%</span> : ''}
-                    {title === 'Balance' ? <span style={{ color: 'red', display: 'flex', alignItems: 'center', fontWeight: '500' }}><BsArrowUpShort />2%</span> : ''}
-                    {title === 'Total Sales' ? <span style={{ color: 'green', display: 'flex', alignItems: 'center', fontWeight: '500' }}><BiDownArrowAlt />11%</span> : ''}
+                    {title === 'Earning' ? <span style={{ color: 'green', display: 'flex', alignItems: 'center', fontWeight: '500' }}><BsArrowUpShort />37.8%</span> : ''}
+                    {title === 'Orders' ? <span style={{ color: 'red', display: 'flex', alignItems: 'center', fontWeight: '500' }}><BiDownArrowAlt />2%</span> : ''}
+                    {title === 'Balance' ? <span style={{ color: 'red', display: 'flex', alignItems: 'center', fontWeight: '500' }}><BiDownArrowAlt />2%</span> : ''}
+                    {title === 'Total Sales' ? <span style={{ color: 'green', display: 'flex', alignItems: 'center', fontWeight: '500' }}><BsArrowUpShort />11%</span> : ''}
                     {<span style={{ paddingLeft: '2%' }}>this month</span>}
                 </Text>
             </Box>
