@@ -10,7 +10,6 @@ const SideBar = () => {
     const pathname = currentUrl.pathname;
     var urlName = pathname.substring(1);
     const text = urlName.split("/");
-    console.log({ text });
     const navigate = useNavigate();
 
     return (

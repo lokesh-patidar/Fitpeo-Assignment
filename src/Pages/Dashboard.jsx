@@ -15,8 +15,6 @@ const Dashboard = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    console.log({ tableData });
-
     return (
         <Box
             width={{ base: '100%', md: '75%', lg: '80%' }}
